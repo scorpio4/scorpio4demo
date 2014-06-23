@@ -1,0 +1,10 @@
+# RDF predicates should be defined in an ontology
+CONSTRUCT {
+?p 	a	<urn:Examples:toolchain:factcheck:undefined_property>
+} WHERE {
+	?s ?p ?o.
+	OPTIONAL {
+		?p rdfs:isDefinedBy ?onto.
+	}
+	FILTER(!BOUND(?onto))
+}

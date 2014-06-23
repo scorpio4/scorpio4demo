@@ -1,0 +1,50 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix test: 		<direct:test:>.
+@prefix camel: 		<http://factcore.com/core/camel/>.
+@prefix : 		    <urn:Examples:iq:camel:>.
+
+<urn:Examples:>
+	camel:from			test:route01;
+	camel:from			<restlet:http://localhost:9999/demo/{id}>;
+	camel:from			<timer://bootstrap?period=300&repeatCount=2>;
+	camel:from			<timer://shutdown?delay=1000&repeatCount=1>;
+
+	camel:from 			<restlet:http://localhost:9999/self/shutdown>;
+	camel:from 			<restlet:http://localhost:9999/self/reboot>;
+	camel:from			<restlet:http://localhost:9999/asset/{id}>;
+	camel:from			<restlet:http://localhost:9999/deploy/{id}>;
+.
+
+test:route01									camel:to	<file://to.test/>.
+
+#<urn:com.factcore.examples.camel.HelloWorld> 	a 			<bean:com.factcore.examples.camel.HelloWorld>.
+
+<bean:com.factcore.examples.camel.HelloWorld>	a			camel:Bean.
+
+#<restlet:http://localhost:9999/demo/{id}>		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
+#<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:sparql:urn:Examples:iq:camel>.
+
+
+<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:iq.hello_world>.
+
+<core:script:urn:Examples:iq.hello_world> 		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
+
+<timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
+
+<timer://shutdown?delay=1000&repeatCount=1>		camel:to	<log:example>.
+
+<restlet:http://localhost:9999/self/shutdown>	camel:to	<self:shutdown>.
+<restlet:http://localhost:9999/self/reboot>		camel:to	<self:reboot>.
+
+
+<restlet:http://localhost:9999/asset/{id}>		camel:to	<core:asset:urn:Examples:iq:camel>.
+
+<restlet:http://localhost:9999/deploy/{id}>		camel:to	<core:deploy:xyz>.
+
+
