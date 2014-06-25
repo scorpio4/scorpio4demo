@@ -9,7 +9,7 @@
 @prefix core: 		<http://factcore.com/core/>.
 @prefix toolchain: 	<http://factcore.com/core/toolchain/>.
 
-@prefix : 		    <urn:Examples:iq.>.
+@prefix : 		    <urn:Examples:toolchain.>.
 
 <urn:Examples:>
         iq:runs         (:testing);

@@ -50,7 +50,7 @@
         <groovy-eclipse-batch.version>2.1.8-01</groovy-eclipse-batch.version>
 
         <factcore.id>urn:${project.name}:</factcore.id>
-
+        <factcore.version>0.37-SNAPSHOT</factcore.version>
         <factcore.src.path>src/main/resources/factcore/</factcore.src.path>
         <factcore.resources.path>src/main/resources/factcore/</factcore.resources.path>
         <factcore.target.path>build/target/</factcore.target.path>
@@ -65,7 +65,7 @@
             <plugin>
                 <groupId>factcore</groupId>
                 <artifactId>FactTools</artifactId>
-                <version>0.36-SNAPSHOT</version>
+                <version>${factcore.version}</version>
             </plugin>
 
             <!--<plugin>-->
@@ -139,8 +139,15 @@
         <dependency>
             <groupId>factcore</groupId>
             <artifactId>FactTools</artifactId>
-            <version>0.36-SNAPSHOT</version>
+            <version>${factcore.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>factcore</groupId>
+            <artifactId>Runtime</artifactId>
+            <version>0.01-SNAPSHOT</version>
+        </dependency>
+
 
         <!--<dependency>-->
             <!--<groupId>org.apache.maven.plugin-tools</groupId>-->

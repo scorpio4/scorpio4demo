@@ -27,8 +27,5 @@
     <logger name="http." level="ERROR" />
     <logger name="httpclient." level="ERROR" />
 
-    <logger name="com.factcore.deploy" level="TRACE" />
-    <logger name="com.factcore.vendor.camel" level="TRACE"/>
-
-    <logger name="com.factcore.examples" level="TRACE"/>
+    <logger name="com.factcore" level="TRACE"/>
 </configuration>
