@@ -5,22 +5,26 @@
 @prefix eg:			<http://www.example.org/> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix iq: 		<http://factcore.com/core/iq/>.
 @prefix core: 		<http://factcore.com/core/>.
+@prefix iq: 		<http://factcore.com/core/iq/>.
 @prefix toolchain: 	<http://factcore.com/core/toolchain/>.
 
-@prefix : 		    <urn:Examples:toolchain.>.
+@prefix : 		    <urn:Examples:toolchain:factcheck:>.
 
 <urn:Examples:>
-        iq:runs         (:testing);
+        iq:runs         (:checks);
 .
 
-:testing
-        iq:execute      :test;
+:checks
+        toolchan:executes     (:undefined_property);
+        iq:execute      :ontologies;
 .
 
-:test
-        a               toolchain:Script;
+:ontologies
+        a               toolchain:FactCheck;
 .
-
+:undefined_property
+        a               toolchain:FactCheck;
+        a               toolchain:Fatal;
+.
 

@@ -7,7 +7,7 @@
 
 @prefix test: 		<direct:test:>.
 @prefix camel: 		<http://factcore.com/core/camel/>.
-@prefix : 		    <urn:Examples:camel:eg:>.
+@prefix : 		    <urn:Examples:toolchain:api:>.
 
 <urn:Examples:>
 	camel:from			test:route01;
@@ -32,10 +32,10 @@ test:route01									camel:to	<file://to.test/>.
 #<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:sparql:urn:Examples:camel:eg>.
 
 
-<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:iq.hello_world>.
+<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:toolchain.exec.hello_world>.
 
 
-<core:script:urn:Examples:iq.hello_world> 		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
+<core:script:urn:Examples:toolchain.exec.hello_world> 		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 
 <timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 

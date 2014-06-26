@@ -1,11 +1,10 @@
 <div>
     <h2>Source Of Truth</h2>
     <p>A (Single) Source Of Truth (SSOT) refers to the practice of structuring data and meta-data so that every element is known by a single authoritative identity, stored in a single definitive location.</p>
-    <p>Scorpio<sup>4</sup> implements a number of tools and strategies to assist with the creation, maintenance and exploitation of a SSOT</p>
+    <p>Scorpio<sup>4</sup> implements a number of tools and strategies to assist with the creation, maintenance and exploitation of an SSOT</p>
 
     <p>Any links or uses of an information element (possibly in a SQL schema, federated or exotic data stores) are by reference only.</p>
-    <p>Thus, when any such SSOT element is modified, the update propagates to the dependent systems throughout enterprise. Third party uses of the
-    information are reference, or deterministically derived (inferred).</p>
+    <p>Thus, when any such SSOT element is modified, the update propagates to the dependent systems throughout enterprise. </p>
 
     <h4>Creating an SSOT</h4>
     <ul>
@@ -20,17 +19,19 @@
     <p>Scorpio<sup>4</sup> supports multiple models per business entity.
         A person is not one-dimensional. We are parents, friends, colleagues. With each party, we have different motivations and requirements.</p>
     <p>Each element within the SSOT can be linked to any other, furthermore rich meta-data about the relationship can be captured too.</p>
-    <p>You should think in terms of aligning information entities to a model of engagement defined by the business.
-        Allow for flexibility in different situations then capture and exploit the relationships between the data.
-    </p>
+    <p>Scorpio<sup>4</sup> employs an RDF/SPARQL repository to store data and meta-data about the enterprise, it's infrastructure and the integration between data, people and processes.
+    Your data is not locked into a proprietary format, nor does Scorpio<sup>4</sup> mandate a particular programming style or choice of language.</p>
+    <p>We think in terms of aligning information entities to a model of engagement defined by the business.
+        We encourage flexibility, different situations call for different approaches. Scorpio<sup>4</sup> captures and then lets you exploit the relationships between the data to rapidly deploy robust, scalable and reliable systems.</p>
+    <p>Whether you are building a rich end user experience or system-to-system integration, Scorpio<sup>4</sup> is tooled up and ready to roll.</p>
 
-    <p>Scorpio<sup>4</sup> employs an RDF/SPARQL repository to store data and meta-data about the enterprise, it's infrastructure and the integration between data, people and processes.</p>
     <h2>Systems Integration</h2>
     <p>A common approach to working with disparate systems is to employ a Service-Oriented Architecture (SOA) that employs an Enterprise Service Bus (ESB).</p>
     <p>A SOA/ESB allows services to interact and inter-operate without the traditional complexity, or strong coupling. </p>
-
+    <p>Scorpio<sup>4</sup> supports industry standard integration patterns (EIP) with technologies including REST, SOAP, MQ, XMPP and dozens more.</p>
     <h2>Knowledge Warehouse</h2>
     <p>A Knowledge Warehouse stores data and meta-data that has, or can be, reshaped and re-purposed to meet different business requirements.</p>
     <p>A Knowledge Warehouse is fed from multiple systems, so it is not an SSOT but rather each data element refers to the SSOT.</p>
     <p>The Knowledge Warehouse stores meta-data about your data environment. It can replicate data too making the repository a richly, query-friendly, self-describing storage engine.</p>
+    <p>When we link knowledge with actions, we call that Wisdom Management. Scorpio<sup>4</sup> finally enables us to talk in terms of an Enterprise Wisdom Warehouse.</p>
 </div>

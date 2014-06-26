@@ -11,9 +11,9 @@
     </pre>
     <p>Secondly, you need to build a processing pipeline that does something with the event:</p>
     <pre>
-        &lt;restlet:http://localhost:9999/hello&gt;  camel:to    &lt;urn:Example.script.hello_world&gt;
+        &lt;restlet:http://localhost:9999/hello&gt;  camel:to    &lt;urn:Example.script.factcore.toolchain.exec.hello_world&gt;
     </pre>
-    <p>The [restlet:] protocol creates a dynamic web service that accept requests on the URI and routes them to the hello_world script.</p>
+    <p>The [restlet:] protocol creates a dynamic web service that accept requests on the URI and routes them to the factcore.toolchain.exec.hello_world script.</p>
     <h3>Semantic API</h3>
     <p>Each part of the pipeline is unique URI that can be linked to other meta-data.</p>
 </div>
