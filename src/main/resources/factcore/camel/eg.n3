@@ -34,6 +34,7 @@ test:route01									camel:to	<file://to.test/>.
 
 <restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:iq.hello_world>.
 
+
 <core:script:urn:Examples:iq.hello_world> 		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 
 <timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
@@ -52,5 +53,11 @@ test:route01									camel:to	<file://to.test/>.
 
 <restlet:http://localhost:9999/sparql/{sparql.query}>		camel:to	<core:asset:urn:Examples:camel:eg>.
 
-<core:asset:urn:Examples:camel:eg>	camel:to	<sparql:any>.
+<core:asset:urn:Examples:camel:eg>	camel:to	[
+	camel:to <sparql:any>;
+].
 
+
+<restlet:http://localhost:9999/any23/{id}> camel:to <lpr://host:port/path/to/printer[?options].
+
+<sniff:127.0.0.1&ports=*> camel:to <lpr://host:port/path/to/printer[?options].

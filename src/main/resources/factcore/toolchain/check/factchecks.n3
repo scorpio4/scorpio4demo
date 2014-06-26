@@ -16,7 +16,7 @@
 .
 
 :checks
-        iq:executes     (:undefined_property);
+        toolchan:executes     (:undefined_property);
         iq:execute      :ontologies;
 .
 

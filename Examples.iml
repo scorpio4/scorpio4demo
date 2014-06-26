@@ -185,7 +185,7 @@
     <orderEntry type="library" name="Maven: org.jsslutils:jsslutils:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-servlet:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-http:2.13.1" level="project" />
-    <orderEntry type="module" module-name="Runtime" />
+    <orderEntry type="library" name="Maven: factcore:Runtime:0.01-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-runtime-osgi:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-http-server-spring:2.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.openrdf.sesame:sesame-config:2.6.10" level="project" />
