@@ -1,0 +1,60 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix test: 		<direct:test:>.
+@prefix camel: 		<http://com.factcore.com/core/camel/>.
+@prefix : 		    <urn:Examples:toolchain:api:>.
+
+<urn:Examples:>
+	camel:from			test:route01;
+	camel:from			<restlet:http://localhost:9999/demo/{id}>;
+	camel:from			<timer://bootstrap?period=300&repeatCount=2>;
+	camel:from			<timer://shutdown?delay=1000&repeatCount=1>;
+
+	camel:from 			<restlet:http://localhost:9999/self/shutdown>;
+	camel:from 			<restlet:http://localhost:9999/self/reboot>;
+	camel:from			<restlet:http://localhost:9999/asset/{id}>;
+	camel:from			<restlet:http://localhost:9999/deploy/{id}>;
+	camel:from			<restlet:http://localhost:9999/any23/{id}>;
+	camel:from			<restlet:http://localhost:9999/sparql/{sparql.query}>;
+.
+
+test:route01									camel:to	<file://to.test/>.
+
+#<urn:com.com.factcore.examples.camel.HelloWorld> 	a 			<bean:com.com.factcore.examples.camel.HelloWorld>.
+<bean:com.com.factcore.examples.camel.HelloWorld>	a			camel:Bean.
+
+#<restlet:http://localhost:9999/demo/{id}>		camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+#<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:sparql:urn:Examples:camel:eg>.
+
+
+<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:toolchain.exec.hello_world>.
+
+
+<core:script:urn:Examples:toolchain.exec.hello_world> 		camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+
+<timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+
+<timer://shutdown?delay=1000&repeatCount=1>		camel:to	<log:example>.
+
+<restlet:http://localhost:9999/self/shutdown>	camel:to	<self:shutdown>.
+<restlet:http://localhost:9999/self/reboot>		camel:to	<self:reboot>.
+
+
+<restlet:http://localhost:9999/asset/{id}>		camel:to	<core:asset:urn:Examples:camel:eg>.
+
+<restlet:http://localhost:9999/deploy/{id}>		camel:to	<core:deploy:xyz>.
+
+<restlet:http://localhost:9999/any23/{id}>		camel:to	<any23:ntriples>.
+
+<restlet:http://localhost:9999/sparql/{sparql.query}>		camel:to	<core:asset:urn:Examples:camel:eg>.
+
+<core:asset:urn:Examples:camel:eg>	camel:to	[
+	camel:to <sparql:any>;
+].
+
+
