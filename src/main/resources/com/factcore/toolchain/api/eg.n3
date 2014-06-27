@@ -25,19 +25,19 @@
 
 test:route01									camel:to	<file://to.test/>.
 
-#<urn:com.com.factcore.examples.camel.HelloWorld> 	a 			<bean:com.com.factcore.examples.camel.HelloWorld>.
-<bean:com.com.factcore.examples.camel.HelloWorld>	a			camel:Bean.
+#<urn:com.factcore.examples.camel.HelloWorld> 	a 			<bean:com.factcore.examples.camel.HelloWorld>.
+<bean:com.factcore.examples.camel.HelloWorld>	a			camel:Bean.
 
-#<restlet:http://localhost:9999/demo/{id}>		camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+#<restlet:http://localhost:9999/demo/{id}>		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 #<restlet:http://localhost:9999/demo/{id}>		camel:to	<core:sparql:urn:Examples:camel:eg>.
 
 
 <restlet:http://localhost:9999/demo/{id}>		camel:to	<core:script:urn:Examples:toolchain.exec.hello_world>.
 
 
-<core:script:urn:Examples:toolchain.exec.hello_world> 		camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+<core:script:urn:Examples:toolchain.exec.hello_world> 		camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 
-<timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.com.factcore.examples.camel.HelloWorld>.
+<timer://bootstrap?period=300&repeatCount=2>	camel:to	<bean:com.factcore.examples.camel.HelloWorld>.
 
 <timer://shutdown?delay=1000&repeatCount=1>		camel:to	<log:example>.
 

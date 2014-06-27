@@ -9,15 +9,15 @@
 @prefix core: 		<http://com.factcore.com/core/>.
 @prefix toolchain: 	<http://com.factcore.com/core/toolchain/>.
 
-@prefix : 		    <bean:com.com.factcore.test.HelloWorld!>.
+@prefix : 		    <bean:com.factcore.test.HelloWorld!>.
 
-<bean:com.com.factcore.fact.FactSpace>  a iq:Bean.
-<urn:self:facts> a <bean:com.com.factcore.fact.FactSpace>.
-<bean:com.com.factcore.test.HelloWorld> a iq:Bean.
+<bean:com.factcore.fact.FactSpace>  a iq:Bean.
+<urn:self:facts> a <bean:com.factcore.fact.FactSpace>.
+<bean:com.factcore.test.HelloWorld> a iq:Bean.
 
 :
         rdfs:label                      "Hello World";
-        a                               <bean:com.com.factcore.test.HelloWorld>;
+        a                               <bean:com.factcore.test.HelloWorld>;
         :setFactSpace    <urn:self:facts>;
         :setNames        ("greetings" "1234"^^xsd:integer "true"^^xsd:boolean);
         :setName         "hello";

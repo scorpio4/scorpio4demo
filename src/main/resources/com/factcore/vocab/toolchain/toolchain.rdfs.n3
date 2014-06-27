@@ -32,7 +32,7 @@
 	rdfs:label			"FactCheck";
 	rdfs:comment 		"A FactCheck Construct";
 	rdfs:isDefinedBy	:;
-	rdfs:subClassOf     <bean:com.com.factcore.iq.exec.Inferring>;
+	rdfs:subClassOf     <bean:com.factcore.iq.exec.Inferring>;
 .
 
 :Template
@@ -40,7 +40,7 @@
 	rdfs:label			"Template";
 	rdfs:comment 		"A Template File";
 	rdfs:isDefinedBy	:;
-	rdfs:subClassOf     <bean:com.com.factcore.iq.exec.Publishing>;
+	rdfs:subClassOf     <bean:com.factcore.iq.exec.Publishing>;
 .
 
 :Script
@@ -48,7 +48,7 @@
 	rdfs:label			"Script";
 	rdfs:comment 		"A JSR223 Script";
 	rdfs:isDefinedBy	:;
-	rdfs:subClassOf     <bean:com.com.factcore.iq.exec.Scripting>;
+	rdfs:subClassOf     <bean:com.factcore.iq.exec.Scripting>;
 .
 
 :Infer
@@ -56,5 +56,5 @@
 	rdfs:label			"Infer";
 	rdfs:comment 		"An Inference Script";
 	rdfs:isDefinedBy	:;
-	rdfs:subClassOf     <bean:com.com.factcore.iq.exec.Inferring>;
+	rdfs:subClassOf     <bean:com.factcore.iq.exec.Inferring>;
 .
