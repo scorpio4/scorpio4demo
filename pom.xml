@@ -7,13 +7,13 @@
     <parent>
         <groupId>scorpio4</groupId>
         <artifactId>scorpio4master</artifactId>
-        <version>0.02-SNAPSHOT</version>
+        <version>0.03-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Examples</artifactId>
+    <artifactId>scorpio4demo</artifactId>
     <packaging>jar</packaging>
 
-    <name>Examples</name>
+    <name>scorpio4 Demo</name>
     <organization>
         <name>Fact:Core</name>
     </organization>
@@ -45,7 +45,7 @@
         <plugins>
             <plugin>
                 <groupId>scorpio4</groupId>
-                <artifactId>FactTools</artifactId>
+                <artifactId>scorpio4rdf</artifactId>
                 <version>${project.version}</version>
             </plugin>
             <plugin>
@@ -119,13 +119,19 @@
 
         <dependency>
             <groupId>scorpio4</groupId>
-            <artifactId>FactTools</artifactId>
+            <artifactId>scorpio4rdf</artifactId>
             <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>scorpio4</groupId>
-            <artifactId>Runtime</artifactId>
+            <artifactId>scorpio4dba</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>scorpio4</groupId>
+            <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
         </dependency>
 

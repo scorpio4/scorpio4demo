@@ -16,8 +16,6 @@
 	dc:created			"2013-03-01"^^xsd:date;
 	dc:modified			"2013-03-01"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>;
-    fab:feature         "Contextual Knowledge Engine";
-    fab:benefit         "Create, organise, categorise, link, share your data, information and knowledge. Add rules, workflows, triggers or scripts to make it smarter. Then share your wisdom with your friends, family and colleague.";
 .
 
 :Executable
@@ -34,26 +32,41 @@
 	rdfs:isDefinedBy	:;
 .
 
-:Asset
+:Bean
 	a					rdfs:Class;
-	rdfs:label			"Asset";
-	rdfs:comment 		"A text-based Asset";
+	rdfs:label			"Bean";
+	rdfs:comment 		"Java Bean";
 	rdfs:isDefinedBy	:;
+.
+
+:execute
+	a					owl:ObjectProperty;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"execute";
+	rdfs:domain			:Executor;
+	rdfs:range  		:Executable;
 .
 
 :executes
 	a					owl:ObjectProperty;
 	rdfs:isDefinedBy	:;
-	rdfs:label 			"executes";
+	rdfs:label 			"execute";
 	rdfs:domain			:Executor;
-	rdfs:range  		:Executable;
+	rdfs:range  		rdfs:List;
 .
 
-:hasAsset
-	a					rdf:Property;
+:runs
+	a					owl:ObjectProperty;
 	rdfs:isDefinedBy	:;
-	rdfs:label 			"has asset";
-	rdfs:domain			:Asset;
-	rdfs:range  		xsd:string;
+	rdfs:label 			"runs";
+	rdfs:comment        "runs a list of Executors";
+	rdfs:range  		rdfs:List;
 .
 
+:bean
+	a					owl:ObjectProperty;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"bean";
+#	rdfs:domain         :Executable;
+	rdfs:range  		:Bean;
+.
