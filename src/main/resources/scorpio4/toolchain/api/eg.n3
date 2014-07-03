@@ -1,0 +1,72 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix acl: 		<http://www.w3.org/ns/auth/acl#> .
+
+@prefix test: 		<direct:test:>.
+@prefix flo: 		<http://scorpio4.com/core/flo/>.
+@prefix : 		    <urn:scorpio4:demo:toolchain:api:>.
+
+<urn:scorpio4:demo:>
+	flo:from			test:route01;
+	flo:from			<restlet:http://localhost:9999/demo/{id}>;
+	flo:from			<timer://bootstrap?period=300&repeatCount=2>;
+	flo:from			<timer://shutdown?delay=1000&repeatCount=1>;
+
+	flo:from 			<restlet:http://localhost:9999/self/shutdown>;
+	flo:from 			<restlet:http://localhost:9999/self/reboot>;
+	flo:from			<restlet:http://localhost:9999/asset/{id}>;
+	flo:from			<restlet:http://localhost:9999/deploy/{id}>;
+	flo:from			<restlet:http://localhost:9999/any23/{id}>;
+
+	flo:from			<restlet:http://localhost:9999/test01>;
+.
+
+test:route01									flo:to	<file://to.test/>.
+
+<urn:com.scorpio4.examples.flo.HelloWorld> 	a 			<bean:com.scorpio4.examples.flo.HelloWorld>.
+<bean:com.scorpio4.examples.flo.HelloWorld>	a			flo:Bean.
+
+#<restlet:http://localhost:9999/demo/{id}>		flo:to	<bean:com.scorpio4.examples.flo.HelloWorld>.
+#<restlet:http://localhost:9999/demo/{id}>		flo:to	<core:sparql:urn:scorpio4:demo:toolchain:api:eg>.
+
+
+<restlet:http://localhost:9999/demo/{id}>		flo:to	<core:script:urn:scorpio4:demo:toolchain.exec.hello_world>.
+
+
+<core:script:urn:scorpio4:demo:toolchain.exec.hello_world> 		flo:to	<bean:com.scorpio4.examples.flo.HelloWorld>.
+
+#<timer://bootstrap?period=300&repeatCount=2>	flo:to	<bean:com.scorpio4.examples.camel.HelloWorld>.
+
+#<timer://shutdown?delay=1000&repeatCount=1>		flo:to	<log:example>.
+
+<restlet:http://localhost:9999/self/shutdown>	flo:to	<self:shutdown>.
+<restlet:http://localhost:9999/self/reboot>		flo:to	<self:reboot>.
+
+
+<restlet:http://localhost:9999/asset/{id}>		flo:to	<core:asset:urn:scorpio4:demo:toolchain:api:eg>.
+
+<restlet:http://localhost:9999/deploy/{id}>		flo:to	<core:deploy:xyz>.
+
+<restlet:http://localhost:9999/any23/{id}>		flo:to	<any23:ntriples>.
+
+#<restlet:http://localhost:9999/sparql/{sparql.query}>		flo:to	<direct:urn:scorpio4:demo:toolchain:api:eg3>.
+
+<core:asset:urn:scorpio4:demo:toolchain:api:eg2>	flo:to	[
+	flo:to			<sql:jdbc:oracle:blah?test=1234>;
+	flo:validate [
+		a			<urn:com.scorpio4.examples.camel.CamelPlanExample>;
+		flo:to	<sparql:any>;
+	]
+].
+
+<urn:com.scorpio4.examples.flo.TestFloExpression>	a	<bean:com.scorpio4.examples.flo.TestFloExpression>.
+<bean:com.scorpio4.examples.flo.TestFloExpression>	a 	flo:Bean.
+<restlet:http://localhost:9999/test01>	flo:to (
+	[ flo:do			<core:asset:urn:scorpio4:demo:toolchain:api:eg> ]
+	[ flo:validate 		<urn:com.scorpio4.examples.flo.TestFloExpression> ]
+	[ flo:do 			<sparql:reza_repo23> ]
+).

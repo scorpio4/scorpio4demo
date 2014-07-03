@@ -4,20 +4,20 @@
 
     <parent>
         <groupId>com.scorpio4</groupId>
-        <artifactId>scorpio4master</artifactId>
-        <version>0.03-SNAPSHOT</version>
+        <artifactId>scorpio4</artifactId>
+        <version>0.04-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
     <artifactId>scorpio4demo</artifactId>
     <packaging>jar</packaging>
 
-    <name>scorpio4 Demo</name>
+    <name>Scorpio4 Demo</name>
     <url>http://www.scorpio4.com</url>
 
     <organization>
-        <name>Fact:Core</name>
-        <url>http://www.factcore.com/scorpio4/</url>
+        <name>scorpio4</name>
+        <url>http://www.scorpio4.com/pom/</url>
     </organization>
 
     <developers>
@@ -25,7 +25,7 @@
             <id>lee</id>
             <name>Lee Curtis</name>
             <email>lee.curtis@me.com</email>
-            <organization>Troven / Fact:Core</organization>
+            <organization>Troven / Scorpio4</organization>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
@@ -60,6 +60,18 @@
                 <groupId>com.scorpio4</groupId>
                 <artifactId>scorpio4dba</artifactId>
                 <version>${project.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.scorpio4</groupId>
+                <artifactId>scorpio4runtime</artifactId>
+                <version>${project.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.scorpio4</groupId>
+                        <artifactId>scorpio4core</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!--Groovy Eclipse compiler plugin compiles both .groovy and .java sources-->
@@ -134,6 +146,12 @@
         <dependency>
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4dba</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4devops</artifactId>
             <version>${project.version}</version>
         </dependency>
 

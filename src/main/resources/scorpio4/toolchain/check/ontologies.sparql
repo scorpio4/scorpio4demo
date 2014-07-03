@@ -1,0 +1,6 @@
+# RDF predicates should be defined in an ontology
+CONSTRUCT {
+?s 	a	<urn:scorpio4:demo:toolchain:factcheck:ontologies>
+} WHERE {
+	?s a    owl:Ontology.
+}

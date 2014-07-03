@@ -1,0 +1,6 @@
+# {{id}}
+prefix flo: 		<http://scorpio4.com/core/flo/>
+
+SELECT DISTINCT ?from ?to WHERE {
+	?from flo:to ?to
+}

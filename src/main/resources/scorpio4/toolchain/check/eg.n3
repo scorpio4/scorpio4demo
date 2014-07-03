@@ -1,0 +1,30 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix core: 		<http://scorpio4.com/core/>.
+@prefix iq: 		<http://scorpio4.com/core/iq/>.
+@prefix toolchain: 	<http://scorpio4.com/core/toolchain/>.
+
+@prefix : 		    <urn:scorpio4:demo:toolchain:factcheck:>.
+
+<urn:scorpio4:demo:>
+        toolchain:runs         (:checks);
+.
+
+:checks
+        toolchain:executes     (:undefined_property);
+        toolchain:execute      :ontologies;
+.
+
+:ontologies
+        a               toolchain:FactCheck;
+.
+:undefined_property
+        a               toolchain:FactCheck;
+        a               toolchain:Fatal;
+.
+
