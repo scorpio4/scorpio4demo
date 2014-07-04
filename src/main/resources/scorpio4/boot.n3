@@ -1,0 +1,8 @@
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+
+<urn:scorpio4demo:>
+	flo:from	<direct:self:active>;
+    flo:from	<direct:self:started>;
+    flo:from	<direct:self:stopping>;
+.

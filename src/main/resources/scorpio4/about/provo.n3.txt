@@ -1,0 +1,29 @@
+<urn:scorpio4demo:Example1_1>
+   a prov:Entity;
+   skos:prefLabel		"Example Bean Definition";
+   prov:wasGeneratedBy  :Curation;
+   prov:wasAttributedTo :curator;
+
+# Reify the constructor
+# TODO: how-to? reference the rdf:object for an rdf:list
+   rdf:subject			<urn:scorpio4demo:Example1_1>;
+   rdf:predicate		bean:new;
+.
+
+:curator
+   a foaf:Person, prov:Agent;
+   foaf:givenName       "The Curator";
+   foaf:mbox            <mailto:curator@example.org>;
+   prov:actedOnBehalfOf <http://scorpio4.com/>;
+.
+
+<http://scorpio4.com/>
+   a foaf:Organization, prov:Agent;
+   foaf:name "National Newspaper, Inc.";
+.
+
+:Curation
+   a prov:Activity;
+   prov:wasAssociatedWith <urn:scorpio4demo:>;
+   prov:wasInformedBy     :aggregationActivity;
+.

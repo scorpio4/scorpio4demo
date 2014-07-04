@@ -1,5 +1,0 @@
-PREFIX  bean: 		<http://scorpio4.com/core/bean/>
-
-SELECT DISTINCT ?this WHERE {
-	?this a bean:Bean.
-}

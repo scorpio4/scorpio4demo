@@ -1,0 +1,75 @@
+<div>
+
+    <h2>Springy Beans - Java Semantics</h2>
+    <p>The Springy Beans vocabulary allows us to talk about Java software components, called Beans.
+        The Vocabulary uses the <code>bean:</code> prefix to provide short-names for URIs.</p>
+
+    <p>Springy Beans describes the dependency injection rules for your Java components,
+        leaving them loosely coupled and allowing you to code to abstractions.</p>
+    <p>In this tutorial we will go through the basics of creating a bean, configuring it for
+        deployment in Scorpio<sup>4</sup>, and then testing it.
+    </p>
+
+    <h3>Supports standard Java classes</h3>
+    <p>Most Java Beans are supported, bringing a huge community of Java libraries into Scorpio<sup>4</sup>'s PlayBook.</p>
+    <p>In most cases, classes represent our business logic. A simple example Bean is illustrated.</p>
+
+    <h3>Register the Bean</h3>
+
+    <p>First, we need to introduce Scorpio<sup>4</sup> to our bean:</p>
+
+    <pre>   <code>&lt;bean:com.scorpio4.demo.Example1_1&gt;     a      bean:Bean.</code></pre>
+    <p>We have simply provided a hard fact (triple) that declares  that our bean is an instance of a <code>bean:Bean</code>.
+        Each Springy Bean is declared in the same way.</p>
+
+    <h3>Instantiate the Bean</h3>
+
+    <p>Next, we tell Scorpio to create an instance of our Bean, identity it as <code>urn:scorpio4demo:Example1_1</code> and cache it for re-use.</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     a      &lt;bean:com.scorpio4.demo.Example1_1&gt;.</code></pre>
+    <p>Scorpio<sup>4</sup> will create and cache the instance object, allowing us to re-use the same Java object in different expressions.</p>
+
+    <p>Now, we want to configure our new instance with a difference message. There are two ways to do that:</p>
+
+    <h3>Construct a Prototype</h3>
+    <div>Springy Beans' <code>bean:new</code> doesn't instantiate the bean, it just specifies the constructor as a prototype. We believe our intentions are better expressed with the more semantic <code>rdf:type</code>.</strong></div>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:new     ().</code></pre>
+    <p>Scorpio<sup>4</sup> supports a synonym that better expresses our intended semantics, but we will continue with the more Java-friendly form.</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ().</code></pre>
+    <p>Notice how we have used an empty RDF list to express the constructor. We could have omitted it, but it's good practice.</p>
+
+    <p>We can pass parameters, for example a simple <code>xsd:string</code> literal:</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:new     ("hello world").</code></pre>
+
+    <p>Using the parameter form, we would achieve the same goal:</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:setMessage  ("hello world").</code></pre>
+    <p>Or in many cases, we can take advantage of Java bean conventions and write:</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:message     "hello world".</code></pre>
+
+    <h3>Meta-Prototype</h3>
+    <p>We could specified our <code>bean:new</code> and <code>bean:setMessage</code> parameters on the <code>bean:</code> class instead of the instance.
+        This allows us to construct sophisticated prototypes that are pre-configured when they are instantiated.</p>
+    <pre>   <code>&lt;bean:com.scorpio4.demo.Example1_1&gt;     bean:setMessage  "hello world".</code></pre>
+    <p>Each time we instantiate this class, it will have a new default 'hello world' message. Of course,
+        we could configured a different message in the instance statement. It's all getting very meta.</p>
+
+    <h3>Example Java Bean</h3>
+    <pre>
+package com.scorpio4.demo ;
+
+public class Example1_1 {
+    private String message = "Scorpio4 is fun";
+
+    public Example1_1() {
+    }
+
+    public Example1_1(String msg) {
+        setMessage(msg);
+    }
+
+    public String toString() {
+        return message;
+    }
+}
+    </pre>
+
+</div>

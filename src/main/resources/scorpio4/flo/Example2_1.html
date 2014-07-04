@@ -1,0 +1,75 @@
+<div>
+
+    <h2>FLO - Integrate Everything</h2>
+
+    <p>Scorpio<sup>4</sup>'s FLO Vocabulary supports rich integration of your digital infrastructure. It
+        is expressive enough to describe Enterprise Integration best practices.</p>
+
+    <h3>A simple example</h3>
+    <p>Let's imagine that we want to create a RESTful web service that saves all requests into a local directory called <code>./scorpio4demo/</code>:</p>
+    <pre>
+    &lt;restlet:http://localhost:9090/scorpio4demo/&gt;    flo:to   &lt;file://./scorpio4demo/&gt;.</pre>
+
+    <h3>A little semantic sugar</h3>
+    <p>We can stake a claim to our RESTful namespace, and make our facts more readable. I've prefixed it with <code>my.</code> to minimise risks of namespace clashes.</p>
+    <pre>   @PREFIX my.restful:     &lt;restlet:http://localhost:9090/scorpio4demo/&gt.
+
+    my.restful:    flo:to   &lt;file://./scorpio4demo/&gt;.</pre>
+    <p>It's a little neater, don't you think?</p>
+
+    <h3>And a side of Springy Beans</h3>
+    <p>Let's get a little more ambitious, hopefully you can follow along:</p>
+    <pre>
+    my.restful: flo:to (
+        [ flo:validate 	&lt;bean:com.scorpio4.demo.Example2_1&gt; ]
+        [ flo:do	&lt;bean:com.scorpio4.demo.Example2_2&gt; ]
+        [ flo:do 	&lt;file://./scorpio4demo/&gt; ]
+    ).</pre>
+
+    <h3>Our example integration</h3>
+    <p>First, our RESTful web service is started. All requests flow to our Example2_1 validation bean. This implements some sophisticated business logic.
+        Actually, it throws a validation error if the <code>?crash=true</code> is passed. Otherwise, it lets the request flow.</p>
+    <p>Next, the Example2_2 bean applies a simple HTML template it. Turning the headers into a simple table.  Then, our freshly minted file flows into our <code>./scorpio4demo/</code> directory. Voila!</p>
+
+    <p>The semantics are powerful, since of the units-of-work are fully qualified URIs they can take part in semantic relationships.</p>
+    <p>In our ultimate source of truth, we can assert <a href="../about/provo.html">provenance</a> over them. They can also be asserted by SPARQL rules to create an Active Architecture that senses, reacts then adapts to it's environment and it's stakeholders..</p>
+
+    <h3>Reusable Units of Works</h3>
+    <p>We can take our FLOs and give them an identity. In this case, it is <code>&lt;urn:scorpio4demo:if_happy&gt;</code>. Don't worry too much about the clunky <code>)][(</code> syntax, we'll come back to that later.</p>
+    <pre>
+@PREFIX :       &lt;urn:scorpio4demo:&gt;
+@PREFIX flo:    &lt;http://scorpio4.com/vocab/v1/flo/&gt;.
+
+:if_happy      flo:choice (
+    [ flo:when (
+          [ flo:to &lt;bean:com.scorpio4.demo.Example2_1&gt; ]
+          [ flo:to :clap_hands ]
+    ) ]
+    [ flo:otherwise (
+          [ flo:to  :stop_playing ]
+    ) ]
+).
+    </pre>
+
+    <h3>Integrate Everything</h3>
+    <p>When FLO protocols are used in conjunction with the FLO vocabulary, the become active. There are hundreds of FLO protocols.</p>
+    <p>We've encountered at least three FLO protocols so far: <code>bean:</code>, <code>restlet:</code> and <code>file:</code>. They are the first part of a URI up to the first <code><b>:</b></code>.</p>
+    <dl>
+        <dt><code>bean:</code> Reference a Springy Bean</dt>
+        <dt><code>restlet:</code> Creates a web API by listening for RESTful requests</dt>
+        <dt><code>file:</code> Work with local files and directories</dt>
+        <dt><code>http:</code> Send requests to remote RESTful services</dt>
+    </dl>
+    <p>Other protocols you might recognise allow you to integrate with FTP, SFTP, SSH, SQL, SPARQL, IMAP, POP, SMTP, Active Directory, LDAP, Printers, JMS, GeoLocation, plus Sales force, Amazon, Google, Yammer, Twitter &amp; Facebook.</p>
+    <p>The emerging <code>MQTT:</code> protocol seems to be winning the day for the "Internet of Things" or perhaps it's the "Enterprise of Things". Either way, FLO is all about creating Simple, Powerful, Extensible, Semantic Integration and Actionable Libraries (S.P.E.S.I.A.L.).</p>
+
+    <h3>Transparent Type Conversion</h3>
+    <p>Its very common when flows need to convert their payloads from one type to another, such as Strings, Files, InputStreams, Documents, ResultSets, etc.</p>
+    <p>FLO supports a rich set of Type Converters, and custom converters can created and installed.</p>
+
+    <h3>Ambiguous Semantics</h3>
+    <p>You may prefer the more formal <code>http://</code> syntax for your URI protocols. FLO will treat them the same, but RDF doesn't.</p>
+    <p>You have to be consistent, in RDF the protocols <code>file://something/</code> and <code>file://./something/</code>refer to the same local directory, but RDF doesn't agree.</p>
+
+    <cite>FLO is powered by <a href="http://camel.apache.org/enterprise-integration-patterns.html">Apache Camel</a>. All of Camel's Components, Type Converters and routing power is available. </cite>
+</div>

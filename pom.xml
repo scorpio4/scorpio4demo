@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.scorpio4</groupId>
         <artifactId>scorpio4</artifactId>
-        <version>0.04-SNAPSHOT</version>
+        <version>0.05-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -47,6 +47,7 @@
     </scm>
 
     <properties>
+        <scorpio4.id>urn:${artifactId}:</scorpio4.id>
     </properties>
 
     <build>
@@ -149,18 +150,17 @@
             <version>${project.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.scorpio4</groupId>
-            <artifactId>scorpio4devops</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.scorpio4</groupId>-->
+            <!--<artifactId>scorpio4devops</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
         </dependency>
-
 
         <!--<dependency>-->
             <!--<groupId>org.apache.maven.plugin-tools</groupId>-->

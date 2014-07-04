@@ -1,0 +1,7 @@
+PREFIX  bean: 		<http://scorpio4.com/vocab/v1/bean/>
+PREFIX	eg: 		<http://example.org/>
+
+SELECT DISTINCT ?this WHERE {
+	?this a bean:Bean.
+	?this a eg:Example1.
+}
