@@ -1,0 +1,15 @@
+
+<restlet:/user/{id}?restletMethods=GET,PUT,DELETE"/>
+	flo:to	:getUser.
+
+:getUser	flo:choice [
+	flo:when	[
+		flo:if 		"${header.CamelHttpMethod} == 'GET'";
+		flo:body	"select * from user where id = ${header.id}";
+	];
+	flo:when	[
+		flo:if		"${header.CamelHttpMethod} == 'PUT'";
+		flo:body	"update user set firstName='${header.firstName}', lastName='${header.lastName}' where id = ${header.id}";
+	];
+	flo:otherwise	flo:stop;
+].

@@ -1,0 +1,16 @@
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix demo: 		<urn:scorpio4demo:>.
+@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
+@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix : 		    <urn:scorpio4demo:toolchain:api:>.
+
+<bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.
+
+demo:hsqldb
+	a 				<bean:org.hsqldb.jdbc.JDBCDataSource>;
+	bean:url		"mem:.";
+	bean:user		"SA";
+	bean:password	"";
+.
+
