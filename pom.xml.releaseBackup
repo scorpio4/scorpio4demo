@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.scorpio4</groupId>
+        <artifactId>scorpio4master</artifactId>
+        <version>0.03-SNAPSHOT</version>
+        <relativePath>../scorpio4master</relativePath>
+    </parent>
+
+    <artifactId>scorpio4demo</artifactId>
+    <packaging>jar</packaging>
+
+    <name>scorpio4 Demo</name>
+    <url>http://www.scorpio4.com</url>
+
+    <organization>
+        <name>Scorpio4</name>
+        <url>http://www.scorpio4.com/scorpio4/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>lee</id>
+            <name>Lee Curtis</name>
+            <email>lee.curtis@me.com</email>
+            <organization>Troven / Scorpio4</organization>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+11</timezone>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>github.com/troven/scorpio4demo.git</url>
+        <connection>scm:git:https://github.com/troven/scorpio4demo.git</connection>
+    </scm>
+
+    <properties>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.scorpio4</groupId>
+                <artifactId>scorpio4rdf</artifactId>
+                <version>${project.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>com.scorpio4</groupId>
+                <artifactId>scorpio4dba</artifactId>
+                <version>${project.version}</version>
+            </plugin>
+
+            <!--Groovy Eclipse compiler plugin compiles both .groovy and .java sources-->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>${groovy-eclipse-compiler.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-batch</artifactId>
+                        <version>${groovy-eclipse-batch.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                        <version>${groovy.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-plugin-plugin</artifactId>-->
+                <!--<version>3.3</version>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; see http://jira.codehaus.org/browse/MNG-5346 &ndash;&gt;-->
+                    <!--<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>mojo-descriptor</id>-->
+                        <!--<goals>-->
+                            <!--<goal>descriptor</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--&lt;!&ndash; if you want to generate help goal &ndash;&gt;-->
+                    <!--<execution>-->
+                        <!--<id>help-goal</id>-->
+                        <!--<goals>-->
+                            <!--<goal>helpmojo</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+    <!-- Project dependencies -->
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4rdf</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4dba</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4runtime</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.maven.plugin-tools</groupId>-->
+            <!--<artifactId>maven-plugin-annotations</artifactId>-->
+            <!--<version>3.3</version>-->
+            <!--<scope>provided</scope>&lt;!&ndash; annotations are needed only to build the plugin &ndash;&gt;-->
+        <!--</dependency>-->
+
+    </dependencies>
+
+</project>

@@ -3,7 +3,7 @@
 @prefix eg: 		<http://example.org/>.
 
 # Define Outer Bean
-<bean:com.scorpio4.demo.Example1>			a 			bean:Bean, eg:Example1_1.
+<bean:com.scorpio4.demo.Example1_1>			a 			bean:Bean, eg:Example1_1.
 
 
 # Define Inner Bean
