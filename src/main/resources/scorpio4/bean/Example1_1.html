@@ -45,6 +45,11 @@
     <p>Or in many cases, we can take advantage of Java bean conventions and write:</p>
     <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:message     "hello world".</code></pre>
 
+    <h3>Complex Constructors</h3>
+    <div>Springy Beans supports more complex constructions,.</p>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ("hello world" ).</code></pre>
+    <p>Notice how we have used an empty RDF list to express the constructor. We could have omitted it, but it's good practice.</p>
+
     <h3>Meta-Prototype</h3>
     <p>We could specified our <code>bean:new</code> and <code>bean:setMessage</code> parameters on the <code>bean:</code> class instead of the instance.
         This allows us to construct sophisticated prototypes that are pre-configured when they are instantiated.</p>
@@ -62,7 +67,7 @@ public class Example1_1 {
     public Example1_1() {
     }
 
-    public Example1_1(String msg) {
+    public Example1_1(String... msg) {
         setMessage(msg);
     }
 
