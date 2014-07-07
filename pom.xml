@@ -140,34 +140,9 @@
 
         <dependency>
             <groupId>com.scorpio4</groupId>
-            <artifactId>scorpio4rdf</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.scorpio4</groupId>
-            <artifactId>scorpio4dba</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>com.scorpio4</groupId>-->
-            <!--<artifactId>scorpio4devops</artifactId>-->
-            <!--<version>${project.version}</version>-->
-        <!--</dependency>-->
-
-        <dependency>
-            <groupId>com.scorpio4</groupId>
             <artifactId>scorpio4runtime</artifactId>
             <version>${project.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.maven.plugin-tools</groupId>-->
-            <!--<artifactId>maven-plugin-annotations</artifactId>-->
-            <!--<version>3.3</version>-->
-            <!--<scope>provided</scope>&lt;!&ndash; annotations are needed only to build the plugin &ndash;&gt;-->
-        <!--</dependency>-->
 
     </dependencies>
 
