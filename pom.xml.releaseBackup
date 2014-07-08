@@ -55,12 +55,7 @@
         <plugins>
             <plugin>
                 <groupId>com.scorpio4</groupId>
-                <artifactId>scorpio4rdf</artifactId>
-                <version>${project.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>com.scorpio4</groupId>
-                <artifactId>scorpio4dba</artifactId>
+                <artifactId>scorpio4maven</artifactId>
                 <version>${project.version}</version>
             </plugin>
             <plugin>
