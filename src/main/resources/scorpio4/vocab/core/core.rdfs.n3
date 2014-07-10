@@ -34,3 +34,9 @@
 	rdfs:range  		xsd:string;
 .
 
+:Runtime
+	a					rdfs:Class;
+	rdfs:label			"Runtime";
+	rdfs:comment 		"A Scorpio4 Runtime";
+	rdfs:isDefinedBy	:;
+.
