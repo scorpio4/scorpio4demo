@@ -1,4 +1,4 @@
-package com.scorpio4.examples.flo;
+package com.scorpio4demo.examples.flo;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Predicate;

@@ -1,8 +1,8 @@
-package com.scorpio4.demo;
+package com.scorpio4demo.demo;
 
 /**
  * scorpio4-oss (c) 2014
- * Module: com.scorpio4.demo
+ * Module: com.scorpio4demo.demo
  * User  : lee
  * Date  : 3/07/2014
  * Time  : 11:59 AM

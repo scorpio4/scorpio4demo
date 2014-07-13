@@ -3,16 +3,16 @@
 @prefix eg: 		<http://example.org/>.
 
 # Define Outer Bean
-<bean:com.scorpio4.demo.Example1_1>			a 			bean:Bean, eg:Example1_1.
+<bean:com.scorpio4demo.demo.Example1_1>			a 			bean:Bean, eg:Example1_1.
 
 
 # Define Inner Bean
-<bean:com.scorpio4.demo.Example1_1> 		a 			bean:Bean, eg:Example1_1;
+<bean:com.scorpio4demo.demo.Example1_1> 		a 			bean:Bean, eg:Example1_1;
 	bean:new	("Hello World" <urn:scorpio4demo:Example1_1>);
 .
 
 # Define an instance of our Outer Bean
-<urn:scorpio4demo:Example1_1>			a 			<bean:com.scorpio4.demo.Example1_1>, eg:Example1_1;
+<urn:scorpio4demo:Example1_1>			a 			<bean:com.scorpio4demo.demo.Example1_1>, eg:Example1_1;
 
 # Inject a simple String and a reference to our Inner Bean
 	# new Example1( "Hello World", new Example_1_1() );

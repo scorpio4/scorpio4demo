@@ -21,8 +21,8 @@
     <p>Let's get a little more ambitious, hopefully you can follow along:</p>
     <pre>
     my.restful: flo:to (
-        [ flo:validate 	&lt;bean:com.scorpio4.demo.Example2_1&gt; ]
-        [ flo:do	&lt;bean:com.scorpio4.demo.Example2_2&gt; ]
+        [ flo:validate 	&lt;bean:com.scorpio4demo.demo.Example2_1&gt; ]
+        [ flo:do	&lt;bean:com.scorpio4demo.demo.Example2_2&gt; ]
         [ flo:do 	&lt;file://./scorpio4demo/&gt; ]
     ).</pre>
 
@@ -42,7 +42,7 @@
 
 :if_happy      flo:choice (
     [ flo:when (
-          [ flo:to &lt;bean:com.scorpio4.demo.Example2_1&gt; ]
+          [ flo:to &lt;bean:com.scorpio4demo.demo.Example2_1&gt; ]
           [ flo:to :clap_hands ]
     ) ]
     [ flo:otherwise (

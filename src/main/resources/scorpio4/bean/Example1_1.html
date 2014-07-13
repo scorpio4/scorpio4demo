@@ -18,14 +18,14 @@
 
     <p>First, we need to introduce Scorpio<sup>4</sup> to our bean:</p>
 
-    <pre>   <code>&lt;bean:com.scorpio4.demo.Example1_1&gt;     a      bean:Bean.</code></pre>
+    <pre>   <code>&lt;bean:com.scorpio4demo.demo.Example1_1&gt;     a      bean:Bean.</code></pre>
     <p>We have simply provided a hard fact (triple) that declares  that our bean is an instance of a <code>bean:Bean</code>.
         Each Springy Bean is declared in the same way.</p>
 
     <h3>Instantiate the Bean</h3>
 
     <p>Next, we tell Scorpio to create an instance of our Bean, identity it as <code>urn:scorpio4demo:Example1_1</code> and cache it for re-use.</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     a      &lt;bean:com.scorpio4.demo.Example1_1&gt;.</code></pre>
+    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     a      &lt;bean:com.scorpio4demo.demo.Example1_1&gt;.</code></pre>
     <p>Scorpio<sup>4</sup> will create and cache the instance object, allowing us to re-use the same Java object in different expressions.</p>
 
     <p>Now, we want to configure our new instance with a difference message. There are two ways to do that:</p>
@@ -53,13 +53,13 @@
     <h3>Meta-Prototype</h3>
     <p>We could specified our <code>bean:new</code> and <code>bean:setMessage</code> parameters on the <code>bean:</code> class instead of the instance.
         This allows us to construct sophisticated prototypes that are pre-configured when they are instantiated.</p>
-    <pre>   <code>&lt;bean:com.scorpio4.demo.Example1_1&gt;     bean:setMessage  "hello world".</code></pre>
+    <pre>   <code>&lt;bean:com.scorpio4demo.demo.Example1_1&gt;     bean:setMessage  "hello world".</code></pre>
     <p>Each time we instantiate this class, it will have a new default 'hello world' message. Of course,
         we could configured a different message in the instance statement. It's all getting very meta.</p>
 
     <h3>Example Java Bean</h3>
     <pre>
-package com.scorpio4.demo ;
+package com.scorpio4demo.demo ;
 
 public class Example1_1 {
     private String message = "Scorpio4 is fun";
