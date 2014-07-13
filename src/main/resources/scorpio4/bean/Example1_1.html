@@ -1,10 +1,10 @@
 <div>
 
-    <h2>Springy Beans - Java Semantics</h2>
-    <p>The Springy Beans vocabulary allows us to talk about Java software components, called Beans.
+    <h2>Active Beans - Java Semantics</h2>
+    <p>The Active Beans vocabulary allows us to talk about Java software components, called Beans.
         The Vocabulary uses the <code>bean:</code> prefix to provide short-names for URIs.</p>
 
-    <p>Springy Beans describes the dependency injection rules for your Java components,
+    <p>Active Beans describes the dependency injection rules for your Java components,
         leaving them loosely coupled and allowing you to code to abstractions.</p>
     <p>In this tutorial we will go through the basics of creating a bean, configuring it for
         deployment in Scorpio<sup>4</sup>, and then testing it.
@@ -31,7 +31,7 @@
     <p>Now, we want to configure our new instance with a difference message. There are two ways to do that:</p>
 
     <h3>Construct a Prototype</h3>
-    <div>Springy Beans' <code>bean:new</code> doesn't instantiate the bean, it just specifies the constructor as a prototype. We believe our intentions are better expressed with the more semantic <code>rdf:type</code>.</strong></div>
+    <div>Active Beans' <code>bean:new</code> doesn't instantiate the bean, it just specifies the constructor as a prototype. We believe our intentions are better expressed with the more semantic <code>rdf:type</code>.</strong></div>
     <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:new     ().</code></pre>
     <p>Scorpio<sup>4</sup> supports a synonym that better expresses our intended semantics, but we will continue with the more Java-friendly form.</p>
     <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ().</code></pre>
@@ -46,7 +46,7 @@
     <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:message     "hello world".</code></pre>
 
     <h3>Complex Constructors</h3>
-    <div>Springy Beans supports more complex constructions,.</p>
+    <div>Active Beans supports more complex constructions,.</p>
     <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ("hello world" ).</code></pre>
     <p>Notice how we have used an empty RDF list to express the constructor. We could have omitted it, but it's good practice.</p>
 
