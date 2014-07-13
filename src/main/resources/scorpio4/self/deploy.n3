@@ -8,6 +8,6 @@
 
 <urn:scorpio4demo:>		flo:from		<reslet:http://localhost:9090/deploy/>.
 
-<reslet:http://localhost:9090/deploy/>	flo:to		<self:deploy>.
+<reslet:http://localhost:9090/deploy/>	flo:to		<self:deploy:>.
 
 

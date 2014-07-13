@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.scorpio4</groupId>
         <artifactId>scorpio4</artifactId>
-        <version>0.08-SNAPSHOT</version>
+        <version>0.09-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
@@ -66,23 +66,6 @@
                 <artifactId>scorpio4maven</artifactId>
                 <version>${project.version}</version>
             </plugin>
-            <plugin>
-                <groupId>com.scorpio4</groupId>
-                <artifactId>scorpio4dba</artifactId>
-                <version>${project.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>com.scorpio4</groupId>
-                <artifactId>scorpio4runtime</artifactId>
-                <version>${project.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.scorpio4</groupId>
-                        <artifactId>scorpio4core</artifactId>
-                        <version>${project.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
 
             <!--Groovy Eclipse compiler plugin compiles both .groovy and .java sources-->
             <plugin>
@@ -116,12 +99,6 @@
 
     <!-- Project dependencies -->
     <dependencies>
-
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-project</artifactId>
-            <version>2.1.0</version>
-        </dependency>
 
         <dependency>
             <groupId>com.scorpio4</groupId>
