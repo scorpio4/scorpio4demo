@@ -1,21 +1,21 @@
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix demo: 		<urn:scorpio4demo:>.
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix : 		    <urn:scorpio4demo:toolchain:api:>.
+@prefix demo: 		<http://scorpio4.com/v1/examples/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix : 		    <http://scorpio4.com/v1/examples/toolchain:api:>.
 
-<restlet:/user/{id}?restletMethods=GET,PUT,DELETE"/>
-	flo:to	:getUser.
+<restlet:/conference/{id}?restletMethods=GET,PUT,DELETE"/>
+	flo:to	:getconference.
 
-:getUser	flo:choice [
+:getconference	flo:choice [
 	flo:when	[
 		flo:if 		"${header.CamelHttpMethod} == 'GET'";
-		flo:body	"select * from user where id = ${header.id}";
+		flo:body	"select * from conference where id = ${header.id}";
 	];
 	flo:when	[
 		flo:if		"${header.CamelHttpMethod} == 'PUT'";
-		flo:body	"update user set firstName='${header.firstName}', lastName='${header.lastName}' where id = ${header.id}";
+		flo:body	"update conference set firstName='${header.firstName}', lastName='${header.lastName}' where id = ${header.id}";
 	];
 	flo:otherwise	flo:stop;
 ].

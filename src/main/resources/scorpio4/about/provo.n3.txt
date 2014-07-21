@@ -1,4 +1,4 @@
-<urn:scorpio4demo:Example1_1>
+<http://scorpio4.com/v1/examples/Example1_1>
    a prov:Entity;
    skos:prefLabel		"Example Bean Definition";
    prov:wasGeneratedBy  :Curation;
@@ -6,7 +6,7 @@
 
 # Reify the constructor
 # TODO: how-to? reference the rdf:object for an rdf:list
-   rdf:subject			<urn:scorpio4demo:Example1_1>;
+   rdf:subject			<http://scorpio4.com/v1/examples/Example1_1>;
    rdf:predicate		bean:new;
 .
 
@@ -24,6 +24,6 @@
 
 :Curation
    a prov:Activity;
-   prov:wasAssociatedWith <urn:scorpio4demo:>;
+   prov:wasAssociatedWith <http://scorpio4.com/v1/examples/>;
    prov:wasInformedBy     :aggregationActivity;
 .

@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.examples.camel
- * User  : lee
+ * @author lee
  * Date  : 27/06/2014
  * Time  : 5:18 PM
  */

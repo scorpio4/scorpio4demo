@@ -2,7 +2,7 @@
     <h2>Provenance</h2>
     <p>It's often used to make statements about the the ownership, custody, chronology or location of a knowledge asset. That's where the W3C's <code>PROV-O</code> Vocabulary </p>
 <pre>
-    &lt;urn:scorpio4demo:Example1_1&gt;
+    &lt;http://scorpio4.com/v1/examples/Example1_1&gt;
         a prov:Entity;
         skos:prefLabel		"Example Bean Definition";
         prov:wasGeneratedBy  :Curation;
@@ -10,7 +10,7 @@
 
     # Reify the constructor
     # TODO: how-to? reference the rdf:object for an rdf:list
-        rdf:subject			&lt;urn:scorpio4demo:Example1_1&gt;;
+        rdf:subject			&lt;http://scorpio4.com/v1/examples/Example1_1&gt;;
         rdf:predicate		bean:new;
     .
 
@@ -28,7 +28,7 @@
 
     :Curation
         a prov:Activity;
-        prov:wasAssociatedWith &lt;urn:scorpio4demo:&gt;;
+        prov:wasAssociatedWith &lt;http://scorpio4.com/v1/examples/&gt;;
         prov:wasInformedBy     :aggregationActivity;
     .
 

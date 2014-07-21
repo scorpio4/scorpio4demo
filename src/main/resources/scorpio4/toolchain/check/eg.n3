@@ -5,13 +5,13 @@
 @prefix eg:			<http://www.example.org/> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
-@prefix iq: 		<http://scorpio4.com/vocab/v1/iq/>.
-@prefix toolchain: 	<http://scorpio4.com/vocab/v1/toolchain/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+@prefix iq: 		<http://scorpio4.com/v1/vocab/iq/>.
+@prefix toolchain: 	<http://scorpio4.com/v1/vocab/toolchain/>.
 
-@prefix : 		    <urn:scorpio4demo:toolchain:factcheck:>.
+@prefix : 		    <http://scorpio4.com/v1/examples/toolchain:factcheck:>.
 
-<urn:scorpio4demo:>
+<http://scorpio4.com/v1/examples/>
         toolchain:runs         (:checks);
 .
 

@@ -1,5 +1,7 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+
+@prefix self: 		<http://scorpio4.com/v1/vocab/bean/>.
 
 # Declare initial FLOs for the application lifecycle
 
@@ -10,11 +12,11 @@
 
 # Declare singleton Beans for various application sub-systems
 
-<self:engine>	a	<bean:com.scorpio4.runtime.Engine>.
-<self:facts>	a	<bean:com.scorpio4.fact.FactSpace>.
-<self:assets>	a	<bean:com.scorpio4.assets.AssetRegister>.
-<self:sesame>	a	<bean:com.scorpio4.vendor.sesame.RepositoryManager>.
-<self:camel>	a	<bean:org.apache.camel.CamelContext>.
+self:engine	a	<bean:com.scorpio4.runtime.Engine>.
+self:facts	a	<bean:com.scorpio4.fact.FactSpace>.
+self:assets	a	<bean:com.scorpio4.assets.AssetRegister>.
+self:sesame	a	<bean:com.scorpio4.vendor.sesame.RepositoryManager>.
+self:camel	a	<bean:org.apache.camel.CamelContext>.
 
 # Declare prototype Beans for various application sub-systems
 
@@ -24,3 +26,8 @@
 <bean:com.scorpio4.vendor.sesame.RepositoryManager>	a bean:Bean.
 <bean:org.apache.camel.CamelContext>	a bean:Bean.
 
+self:
+	flo:from	<direct:self:active>;
+    flo:from	<direct:self:started>;
+    flo:from	<direct:self:stopping>;
+.

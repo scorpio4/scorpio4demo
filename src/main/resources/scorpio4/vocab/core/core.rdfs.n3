@@ -5,15 +5,15 @@
 @prefix eg:			<http://www.example.org/> .
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix iq: 		<http://scorpio4.com/vocab/v1/iq/>.
-@prefix core: 		<http://scorpio4.com/vocab/v1/>.
-@prefix : 		    <http://scorpio4.com/vocab/v1/>.
+@prefix iq: 		<http://scorpio4.com/v1/vocab/iq/>.
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+@prefix : 		    <http://scorpio4.com/v1/vocab/>.
 
 :	a					owl:Ontology;
 	owl:versionInfo		"0.1";
-	rdfs:label			"Core";
-	dc:title			"Core vocabulary";
-	rdfs:comment		"Vocabulary for describing Scorpio4.";
+	rdfs:label			"Scorpio4 Core";
+	dc:title			"Scorpio4 Core vocabulary";
+	rdfs:comment		"Vocabulary for describing Scorpio4 specific .";
 	dc:created			"2013-03-01"^^xsd:date;
 	dc:modified			"2013-03-01"^^xsd:date;
 	dc:license 			<http://www.opendatacommons.org/licenses/pddl/1.0/>;
@@ -34,9 +34,49 @@
 	rdfs:range  		xsd:string;
 .
 
+	rdfs:isDefinedBy	:;
+
 :Runtime
 	a					rdfs:Class;
 	rdfs:label			"Runtime";
 	rdfs:comment 		"A Scorpio4 Runtime";
+.
+
+:Feature
+	a					rdfs:Class;
+	rdfs:label			"Feature";
+	rdfs:comment 		"A Scorpio4 Feature";
 	rdfs:isDefinedBy	:;
 .
+
+:ActiveVocabulary
+	rdfs:subClassOf		:Feature;
+	rdfs:subClassOf		owl:Ontology;
+	rdfs:label			"Active Vocabulary";
+	rdfs:comment 		"A Scorpio4 Active Vocabulary";
+	rdfs:isDefinedBy	:;
+.
+
+:Asset
+	a					rdfs:Class;
+	rdfs:label			"Asset";
+	rdfs:comment 		"A text-based Asset";
+	rdfs:isDefinedBy	:;
+.
+
+:hasAsset
+	a					rdf:Property;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"has asset";
+	rdfs:domain			:Asset;
+	rdfs:range  		xsd:string;
+.
+
+:implements
+	a					rdf:Property;
+	rdfs:isDefinedBy	:;
+	rdfs:label 			"implements";
+	rdfs:domain			:Engine;
+	rdfs:range  		:Feature;
+.
+

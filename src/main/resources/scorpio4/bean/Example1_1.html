@@ -24,30 +24,30 @@
 
     <h3>Instantiate the Bean</h3>
 
-    <p>Next, we tell Scorpio to create an instance of our Bean, identity it as <code>urn:scorpio4demo:Example1_1</code> and cache it for re-use.</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     a      &lt;bean:com.scorpio4demo.demo.Example1_1&gt;.</code></pre>
+    <p>Next, we tell Scorpio to create an instance of our Bean, identity it as <code>http://scorpio4.com/v1/examples/Example1_1</code> and cache it for re-use.</p>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     a      &lt;bean:com.scorpio4demo.demo.Example1_1&gt;.</code></pre>
     <p>Scorpio<sup>4</sup> will create and cache the instance object, allowing us to re-use the same Java object in different expressions.</p>
 
     <p>Now, we want to configure our new instance with a difference message. There are two ways to do that:</p>
 
     <h3>Construct a Prototype</h3>
     <div>Active Beans' <code>bean:new</code> doesn't instantiate the bean, it just specifies the constructor as a prototype. We believe our intentions are better expressed with the more semantic <code>rdf:type</code>.</strong></div>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:new     ().</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:new     ().</code></pre>
     <p>Scorpio<sup>4</sup> supports a synonym that better expresses our intended semantics, but we will continue with the more Java-friendly form.</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ().</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:constructor     ().</code></pre>
     <p>Notice how we have used an empty RDF list to express the constructor. We could have omitted it, but it's good practice.</p>
 
     <p>We can pass parameters, for example a simple <code>xsd:string</code> literal:</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:new     ("hello world").</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:new     ("hello world").</code></pre>
 
     <p>Using the parameter form, we would achieve the same goal:</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:setMessage  ("hello world").</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:setMessage  ("hello world").</code></pre>
     <p>Or in many cases, we can take advantage of Java bean conventions and write:</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:message     "hello world".</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:message     "hello world".</code></pre>
 
     <h3>Complex Constructors</h3>
     <div>Active Beans supports more complex constructions,.</p>
-    <pre>   <code>&lt;urn:scorpio4demo:Example1_1&gt;     bean:constructor     ("hello world" ).</code></pre>
+    <pre>   <code>&lt;http://scorpio4.com/v1/examples/Example1_1&gt;     bean:constructor     ("hello world" ).</code></pre>
     <p>Notice how we have used an empty RDF list to express the constructor. We could have omitted it, but it's good practice.</p>
 
     <h3>Meta-Prototype</h3>

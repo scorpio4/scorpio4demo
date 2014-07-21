@@ -1,0 +1,67 @@
+# Linked Open Data Examples
+
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+@prefix acl: 		<http://www.w3.org/ns/auth/acl#> .
+
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix : 		    <http://scorpio4.com/v1/examples/flo/lod/simple#>.
+
+# convenient convention to refer to the runtime
+@prefix self: 		    <http://scorpio4.com/v1/examples/self#>.
+
+# Example: Conference FLO
+#
+# Defines the path of an HTTP message from a server
+# determines SQL query to perform depending on HTTP method
+# execute SQL on logical server (defined elsewhere)
+# ask a "curator" server to transform the result set
+# into RDF Turtle.
+#
+
+:conference		flo:to ( [ flo:choice [
+
+# choice (header)
+#	when method = GET
+#		body = select SQL query
+#	when method = PUT
+#		body = update SQL query
+# end choice
+
+    flo:when    [
+        flo:if      "${header.CamelHttpMethod} == 'GET'";
+        flo:body    "select * from conference where id = ${header.id}";
+    ];
+    flo:when    [
+        flo:if      "${header.CamelHttpMethod} == 'PUT'";
+        flo:body    "update conference set firstName='${header.firstName}', lastName='${header.lastName}' where id = ${header.id}";
+    ];
+    flo:otherwise   flo:stop;
+    ]
+]
+
+# send the message (our SQL query) to JDBC to execute
+ <jdbc:urn:mySQL:DataSource>
+# then the FLO passes to a simple Java bean to do the data conversion & close the rdf:List
+ <bean:com.scorpio4.example.JDBC2N3> ).
+
+# Tell the engine to watch the FLO for RESTful HTTP requests on port 9000 on any NIC ...
+self:engine		flo:from			<restlet:http://0.0.0.0:9000/examples/flo/lod/simple>.
+
+# Now, wire the HTTP request into our main FLO
+<restlet:http://0.0.0.0:9000/examples/flo/lod/simple> flo:to	:conference.
+
+# And the JDBC Datasource (smushed into Active Beans)
+<urn:mySQL:DataSource>
+    a               <bean:org.hsqldb.jdbc.JDBCDataSource>;
+    bean:url        "mem:.";
+    bean:user       "SA";
+    bean:password   "";
+.
+<bean:org.hsqldb.jdbc.JDBCDataSource> a bean:Bean.
+

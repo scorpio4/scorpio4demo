@@ -1,12 +1,12 @@
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
 
 @prefix : 			<http://scorpio4demo.com/self/deploy#>.
 
 # Declare initial FLOs for deploy
 
 
-<urn:scorpio4demo:>		flo:from		<reslet:http://localhost:9090/deploy/>.
+<http://scorpio4.com/v1/examples/>		flo:from		<reslet:http://localhost:9090/deploy/>.
 
 <reslet:http://localhost:9090/deploy/>	flo:to		<self:deploy:>.
 

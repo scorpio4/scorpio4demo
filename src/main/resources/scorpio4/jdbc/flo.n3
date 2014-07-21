@@ -1,9 +1,9 @@
 @prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
 
-@prefix demo: 		<urn:scorpio4demo:>.
-@prefix flo: 		<http://scorpio4.com/vocab/v1/flo/>.
-@prefix bean: 		<http://scorpio4.com/vocab/v1/bean/>.
-@prefix : 		    <urn:scorpio4demo:toolchain:api:>.
+@prefix demo: 		<http://scorpio4.com/v1/examples/>.
+@prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
+@prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix : 		    <http://scorpio4.com/v1/examples/toolchain:api:>.
 
 <bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.
 

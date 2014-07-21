@@ -35,10 +35,10 @@
     <p>In our ultimate source of truth, we can assert <a href="../about/provo.html">provenance</a> over them. They can also be asserted by SPARQL rules to create an Active Architecture that senses, reacts then adapts to it's environment and it's stakeholders..</p>
 
     <h3>Reusable Units of Works</h3>
-    <p>We can take our FLOs and give them an identity. In this case, it is <code>&lt;urn:scorpio4demo:if_happy&gt;</code>. Don't worry too much about the clunky <code>)][(</code> syntax, we'll come back to that later.</p>
+    <p>We can take our FLOs and give them an identity. In this case, it is <code>&lt;http://scorpio4.com/v1/examples/if_happy&gt;</code>. Don't worry too much about the clunky <code>)][(</code> syntax, we'll come back to that later.</p>
     <pre>
-@PREFIX :       &lt;urn:scorpio4demo:&gt;
-@PREFIX flo:    &lt;http://scorpio4.com/vocab/v1/flo/&gt;.
+@PREFIX :       &lt;http://scorpio4.com/v1/examples/&gt;
+@PREFIX flo:    &lt;http://scorpio4.com/v1/vocab/flo/&gt;.
 
 :if_happy      flo:choice (
     [ flo:when (

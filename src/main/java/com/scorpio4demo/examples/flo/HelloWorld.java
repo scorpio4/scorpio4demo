@@ -7,13 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 
 /**
  * Scorpio (c) 2014
  * Module: com.scorpio4.examples.camel
- * User  : lee
+ * @author lee
  * Date  : 21/06/2014
  * Time  : 9:20 PM
  */
@@ -37,7 +38,7 @@ public class HelloWorld {
 
 		headers.put("hello.world", new Date());
 		if (exchange.getIn().getBody()==null) {
-			ArrayList arrayList = new ArrayList();
+			Collection<String> arrayList = new ArrayList();
 			arrayList.add("Hello World");
 			arrayList.add("Greetings Earthling");
 			exchange.getOut().setBody(arrayList);
