@@ -1,0 +1,29 @@
+@prefix rdf:		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:		<http://www.w3.org/2002/07/owl#> .
+@prefix dc:			<http://purl.org/dc/elements/1.1/> .
+@prefix eg:			<http://www.example.org/> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#>.
+
+@prefix core: 		<http://scorpio4.com/v1/vocab/>.
+@prefix mojo: 		<http://scorpio4.com/v1/vocab/mojo/>.
+
+@prefix : 		    <http://scorpio4.com/v1/examples/mojo/check/>.
+
+<http://scorpio4.com/v1/examples/>
+        mojo:runs         (:checks);
+.
+
+:checks
+        mojo:executes     (:undefined_property);
+        mojo:execute      :ontologies;
+.
+
+:ontologies
+        a               mojo:FactCheck;
+.
+:undefined_property
+        a               mojo:FactCheck;
+        a               mojo:Fatal;
+.
+

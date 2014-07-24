@@ -1,6 +1,6 @@
 # RDF predicates should be defined in an ontology
 CONSTRUCT {
-?p 	a	<http://scorpio4.com/v1/examples/toolchain:factcheck:undefined_property>
+?p 	a	<http://scorpio4.com/v1/examples/mojo/factcheck/undefined_property>
 } WHERE {
 	?s ?p ?o.
 	OPTIONAL {

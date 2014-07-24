@@ -3,7 +3,7 @@
 @prefix demo: 		<http://scorpio4.com/v1/examples/>.
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
-@prefix : 		    <http://scorpio4.com/v1/examples/toolchain:api:>.
+@prefix : 		    <http://scorpio4.com/v1/examples/mojo:api:>.
 
 <bean:org.hsqldb.jdbc.JDBCDataSource>	a	bean:Bean.
 
