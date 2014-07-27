@@ -10,7 +10,7 @@
 
 @prefix : 		    <http://scorpio4.com/v1/examples/mojo/check/>.
 
-<http://scorpio4.com/v1/examples/>
+<http://scorpio4demo.com/>
         mojo:runs         (:checks);
 .
 

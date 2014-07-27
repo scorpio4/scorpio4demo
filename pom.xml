@@ -43,7 +43,8 @@
   </scm>
 
     <properties>
-        <scorpio4.id>urn:${project.artifactId}:</scorpio4.id>
+        <scorpio4.httpPort>9090</scorpio4.httpPort>
+        <scorpio4.id>http://scorpio4demo.com/</scorpio4.id>
         <scorpio4.src.path>src/main/resources/scorpio4/</scorpio4.src.path>
         <scorpio4.resources.path>src/main/resources/scorpio4/</scorpio4.resources.path>
         <scorpio4.target.path>build/target/</scorpio4.target.path>

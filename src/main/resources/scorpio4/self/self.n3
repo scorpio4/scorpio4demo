@@ -1,7 +1,7 @@
 @prefix flo: 		<http://scorpio4.com/v1/vocab/flo/>.
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
 
-@prefix self: 		<http://scorpio4.com/v1/vocab/bean/>.
+@prefix self: 		<http://scorpio4demo.com/>.
 
 # Declare initial FLOs for the application lifecycle
 

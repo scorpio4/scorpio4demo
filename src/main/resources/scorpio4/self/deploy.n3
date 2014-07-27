@@ -6,8 +6,7 @@
 # Declare initial FLOs for deploy
 
 
-<http://scorpio4.com/v1/examples/>		flo:from		<reslet:http://localhost:9090/deploy/>.
+<http://scorpio4demo.com/>
+		flo:from		<restlet:http://localhost:{{httpPort}}/deploy/>.
 
-<reslet:http://localhost:9090/deploy/>	flo:to		<self:deploy:>.
-
-
+<restlet:http://localhost:{{httpPort}}/deploy/>	flo:to		<self:deploy:>.

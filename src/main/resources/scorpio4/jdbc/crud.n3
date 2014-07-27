@@ -5,10 +5,10 @@
 @prefix bean: 		<http://scorpio4.com/v1/vocab/bean/>.
 @prefix : 		    <http://scorpio4.com/v1/examples/mojo:api:>.
 
-<restlet:/conference/{id}?restletMethods=GET,PUT,DELETE"/>
-	flo:to	:getconference.
+<restlet:http://localhost:{{httpPort}}/conference/{id}?restletMethods=GET,PUT,DELETE"/>
+	flo:to	:conference.
 
-:getconference	flo:choice [
+:conference	flo:choice [
 	flo:when	[
 		flo:if 		"${header.CamelHttpMethod} == 'GET'";
 		flo:body	"select * from conference where id = ${header.id}";

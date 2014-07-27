@@ -50,11 +50,11 @@
 # then the FLO passes to a simple Java bean to do the data conversion & close the rdf:List
  <bean:com.scorpio4.example.JDBC2N3> ).
 
-# Tell the engine to watch the FLO for RESTful HTTP requests on port 9000 on any NIC ...
-self:engine		flo:from			<restlet:http://0.0.0.0:9000/examples/flo/lod/simple>.
+# Tell the engine to watch the FLO for RESTful HTTP requests on Scorpio4's default HTTP port...
+<http://scorpio4demo.com/>		flo:from			<restlet:http://0.0.0.0:{{httpPort}}/examples/flo/lod/simple>.
 
 # Now, wire the HTTP request into our main FLO
-<restlet:http://0.0.0.0:9000/examples/flo/lod/simple> flo:to	:conference.
+<restlet:http://0.0.0.0:{{httpPort}}/examples/flo/lod/simple> flo:to	:conference.
 
 # And the JDBC Datasource (smushed into Active Beans)
 <urn:mySQL:DataSource>
