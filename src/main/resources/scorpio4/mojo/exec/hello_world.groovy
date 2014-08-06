@@ -1,3 +1,3 @@
-package scorpio4.toolchain.exec
+package scorpio4.mojo.exec
 
 return [ "hello": "world" ];
