@@ -115,6 +115,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.scorpio4</groupId>
+            <artifactId>scorpio4labs</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
     </dependencies>
 
     <!--Project artifact repositories setup-->
